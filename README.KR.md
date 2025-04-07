@@ -1,6 +1,6 @@
-# 카스밀 블로그 앱 (Kasumil Blog App)
+# 카슈밀 블로그 앱 (Kasumil Blog App)
 
-[카스밀 티스토리 블로그](https://kasumil.tistory.com)를 React Native의 WebView로 감싸서 모바일 앱으로 패키징한 프로젝트입니다. Android와 iOS 모두 지원하며, Android 뒤로가기 버튼 처리, 다크모드, 알림 설정과 같은 동적 설정 기능을 포함하고 있습니다.
+[카슈밀 티스토리 블로그](https://kasumil.tistory.com)를 React Native의 WebView로 감싸서 모바일 앱으로 패키징한 프로젝트입니다. Android와 iOS 모두 지원하며, Android 뒤로가기 버튼 처리, 다크모드, 알림 설정과 같은 동적 설정 기능을 포함하고 있습니다.
 
 ## 주요 기능
 
