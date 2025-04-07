@@ -1,97 +1,68 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+[🇰🇷 한국어로 보기](./README.KR.md)
 
-# Getting Started
+# Kasumil Blog App
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+A React Native application that packages the blog [kasumil.tistory.com](https://kasumil.tistory.com) as a mobile app using React Native WebView. This project supports both Android and iOS platforms and includes features like back-button handling on Android and dynamic settings (e.g., dark mode, notification toggles).
 
-## Step 1: Start Metro
+## Features
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+- **WebView Packaging:** Display kasumil.tistory.com inside the app using WebView.
+- **Platform Support:** Works on both Android and iOS.
+- **Back Button Handling:** Custom back-button behavior on Android (navigates WebView history).
+- **Dynamic Settings:** Settings screen with toggles for Dark Mode and Notifications.
+- **Navigation:** Integrated React Navigation with both Stack and Bottom Tab navigators.
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+## Prerequisites
 
-```sh
-# Using npm
-npm start
+- Node.js, npm or Yarn
+- React Native CLI
+- Xcode (for iOS) and Android Studio (for Android)
+- CocoaPods (for iOS)
 
-# OR using Yarn
-yarn start
-```
+## Installation
 
-## Step 2: Build and run your app
+1. **Clone the Repository**
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+   ```sh
+   git clone <repository-url>
+   cd RN_webview_package
 
-### Android
+   ```
 
-```sh
-# Using npm
-npm run android
+2. **Install Dependencies**
+   Using npm: npm install
+   Or using Yarn: yarn install
 
-# OR using Yarn
-yarn android
-```
+3. **Install iOS Dependencies (CocoaPods)**
+   cd ios && pod install && cd ..
 
-### iOS
+## Running the App
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+Android
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+Run the following command:
+npx react-native run-android
 
-```sh
-bundle install
-```
+iOS
 
-Then, and every time you update your native dependencies, run:
+Run the following command (ensuring you select a simulator that supports your target iOS version, e.g., iPhone 16):
+npx react-native run-ios --simulator="iPhone 16"
 
-```sh
-bundle exec pod install
-```
+## Project Structure
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+Below is a sample project structure:
 
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+    RN_webview_package/
+    ├── android/
+    ├── ios/
+    ├── src/
+    │   ├── navigation/
+    │   │   └── AppNavigator.tsx      # Stack/Tab navigator setup
+    │   ├── screens/
+    │   │   ├── WebScreen.tsx         # WebView screen (kasumil.tistory.com)
+    │   │   └── SettingsScreen.tsx    # Settings screen (Dark Mode, Notifications)
+    │   └── components/
+    │       └── WebviewComponent.tsx  # (Optional) WebView wrapper with custom behavior
+    ├── App.tsx                       # Root component integrating NavigationContainer
+    ├── README.md
+    └── package.json
